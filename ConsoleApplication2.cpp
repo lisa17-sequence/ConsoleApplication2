@@ -5,9 +5,9 @@
 #include <string>
 #include <vector>
 
-std::vector < std::pair<double, double>> MakeSin (double leftLimit, double rightLimit, double userSteps) {
+std::vector < std::pair<double, double>> MakeSin (double leftLimit, double rightLimit, double countOfDots) {
 	double allSteps = abs(leftLimit) + abs(rightLimit) + 1;
-	double step = allSteps / userSteps;
+	double step = allSteps / countOfDots;
 	std::vector < std::pair<double, double>> table;
 	for (double x = leftLimit; x <= rightLimit; x += step) {
 		table.push_back({ x, sin(x) });
