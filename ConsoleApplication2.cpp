@@ -9,8 +9,8 @@ auto MakeSin(const double upLimit)
 	std::vector<std::pair<double, double>> table;
 	for (double x = leftLimit; x <= rightLimit; x++)
 	{
-		table.emplace_back(x, (upLimit*(sin(x))));
-		std::cout << x << ' ' << upLimit* sin(x) << '\n';
+		table.emplace_back(x, upLimit * sin(x));
+		std::cout << x << ' ' << upLimit * sin(x) << '\n';
 	}
 	return table;
 }
