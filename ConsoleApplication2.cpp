@@ -1,22 +1,21 @@
-#include <SFML/Graphics.hpp>
 #include <cmath>
-#include <iostream>
-#include <set>
-#include <string>
 #include <vector>
+#include <iostream>
 
-std::vector < std::pair<double, double>> MakeSin (double leftLimit, double rightLimit, double countOfDots) {
-	double allSteps = abs(leftLimit) + abs(rightLimit) + 1;
-	double step = allSteps / countOfDots;
-	std::vector < std::pair<double, double>> table;
-	for (double x = leftLimit; x <= rightLimit; x += step) {
-		table.push_back({ x, sin(x) });
-		std::cout << x << ' ' << sin(x) << '\n';
+auto MakeSin(const double upLimit)
+{
+	constexpr double leftLimit = -4;
+	constexpr double rightLimit = 4;
+	std::vector<std::pair<double, double>> table;
+	for (double x = leftLimit; x <= rightLimit; x++)
+	{
+		table.emplace_back(x, (upLimit*(sin(x))));
+		std::cout << x << ' ' << upLimit* sin(x) << '\n';
 	}
 	return table;
 }
-int main() {
-	MakeSin(-5, 6, 6);
+
+int main()
+{
+	MakeSin( 10);
 }
-
-
